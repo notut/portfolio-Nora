@@ -1,7 +1,8 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, Dimensions } from "react-native";
 import Header from "@/components/header";
 import { Link } from "expo-router";
 
+const { height, width } = Dimensions.get("window");
 
 export default function HomeScreen() {
   return (
@@ -12,12 +13,15 @@ export default function HomeScreen() {
       <Image source={require("../assets/images/Meg.png")} style={styles.image} />
 
         <View style={styles.textContainer}>
-          <Text style={styles.tagline}>Hei!</Text>
-          <Text style={styles.title}>
-            Det er på tide å <Text style={styles.highlight}>vise</Text> hva du kan
-          </Text>
+          <Text style={styles.title}>OM MEG</Text>
+          {/*<Text style={styles.tagline}>Hei!</Text>*/}
           <Text style={styles.description}>
-            Jeg er en kreativ utvikler og designer med lidenskap for å bygge visuelle og interaktive løsninger som skiller seg ut.
+          Hei! Mitt navn er Nora Tufte Thoresen.
+          Jeg er tredjeårsstudent i informasjonsteknologi frontend- og mobilutvikling ved Høyskolen Kristiania, 
+          og planlegger en master i interaksjonsdesign høsten 2026. 
+          Jeg brenner for å skape brukervennlige digitale løsninger som kombinerer kreativitet og teknologi. 
+          Med erfaring fra både design og utvikling trives jeg i tverrfaglige team, 
+          og motiveres av å gjøre komplekse prosesser enkle og intuitive for brukeren.
           </Text>
           <Link href="../app/prosjekter" asChild>
             <TouchableOpacity style={styles.button}>
@@ -39,19 +43,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-start",
     padding: 20,
+    margin: 0,
   },
   image: {
-    width: 300, 
-    height: 400,
-    borderRadius: 12,
-    margin: 10,
+    width: width * 0.5, 
+    height: height,
+    resizeMode: "cover",
+    borderRadius: 10,
+    margin: 5,
   },
   textContainer: {
     flex: 1,
     maxWidth: 400,
     margin: 10,
+    alignSelf: "flex-start",
   },
   tagline: {
     color: "#D47CBF",
@@ -59,9 +66,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   title: {
-    fontSize: 34,
-    fontWeight: "700",
-    lineHeight: 40,
+    fontSize: 54,
+    fontWeight: "800",
+    lineHeight: 60,
   },
   highlight: {
     color: "#D47CBF",
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
   },
   description: {
     marginVertical: 16,
-    fontSize: 16,
+    fontSize: 18,
     color: "#333",
   },
   button: {

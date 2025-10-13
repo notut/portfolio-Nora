@@ -4,7 +4,7 @@ import { Link } from "expo-router";
 export default function Header() {
     return(
         <View style={styles.header}>
-            <Text style={styles.logo}>NORA <Text style={{color:"#D47CBF"}}>TUFTE THORESEN</Text></Text>
+            <Text style={styles.logo}>Nora <Text style={{color:"#D47CBF"}}>Tufte Thoresen</Text></Text>
             <View style={styles.links}>
                 <Link href="/" asChild>
                     <TouchableOpacity><Text style={styles.link}>Om meg</Text></TouchableOpacity>
@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     logo: {
         fontSize: 24,
         fontWeight: "700",
+        //fontFamily: "times-new-roman",
+        fontStyle: "italic",
     },
     links: {
         flexDirection: "row",
