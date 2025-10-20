@@ -4,7 +4,7 @@ import { Link } from "expo-router";
 export default function Header() {
     return(
         <View style={styles.header}>
-            <Text style={styles.logo}>Nora <Text style={{color:"#D47CBF"}}>Tufte Thoresen</Text></Text>
+            <Text style={styles.logo}>PORTEFØLJE</Text>
             <View style={styles.links}>
                 <Link href="/" asChild>
                     <TouchableOpacity><Text style={styles.link}>Om meg</Text></TouchableOpacity>
@@ -15,6 +15,9 @@ export default function Header() {
                 <Link href="/kontakt" asChild>
                     <TouchableOpacity><Text style={styles.link}>Kontakt</Text></TouchableOpacity>
                 </Link>
+                <Link href="/cv" asChild>
+                    <TouchableOpacity><Text style={styles.link}>CV</Text></TouchableOpacity>
+                </Link>
             </View>
         </View>
     );
@@ -22,24 +25,28 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     header: {
-        paddingTop: 50,
-        paddingHorizontal: 20,
+        height: 80,
+        paddingHorizontal: 30,
+
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+
+        backgroundColor: "#f6f4ef",
+        //Linje under header
+        borderBottomWidth: StyleSheet.hairlineWidth,
     },
     logo: {
-        fontSize: 24,
-        fontWeight: "700",
-        //fontFamily: "times-new-roman",
-        fontStyle: "italic",
+        fontSize: 34,
+        fontFamily: "Poppins_800ExtraBold",
+        color: "#BE82A0",
     },
     links: {
         flexDirection: "row",
         gap: 20,
     },
     link: {
-        fontSize: 16,
+        fontSize: 18,
         color: "#333",
     },
 });
