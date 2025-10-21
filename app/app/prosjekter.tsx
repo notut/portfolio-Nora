@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, useWindowDimensions, Pressable } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, useWindowDimensions, Pressable, Platform } from "react-native";
 import Header from "@/components/header";
 import { Link } from "expo-router";
 import { Video, ResizeMode } from "expo-av";
@@ -32,38 +32,50 @@ export default function ProjectScreen() {
         <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <Header />
 
-        <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
-            <Pressable
-            onPress={onTogglePlay}
-            style={[styles.videoCard, {
-                width: dims.boxW,
-                height: dims.boxH,
-                marginLeft: isWide ? 16 : 12, 
-                alignSelf: isWide ? "flex-start" : "center",
-                },
-            ]}
-            >
-                <Video
-                ref={videoRef}
-                style={styles.video}
-                source={require("@/assets/videos/Innovasjon.mov")}
-                useNativeControls={false}
-                resizeMode={ResizeMode.COVER}
-                isLooping
-                shouldPlay={false}
-                posterSource={require("@/assets/images/PP.png")}
-                posterStyle={styles.videoPoster}
-                />
+        <View style={styles.planetContainer}>
+            <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
+                '<Pressable
+                onPress={onTogglePlay}
+                style={[styles.videoCard, {
+                    width: dims.boxW,
+                    height: dims.boxH,
+                    marginLeft: isWide ? 16 : 12, 
+                    alignSelf: isWide ? "flex-start" : "center",
+                    },
+                ]}
+                >
+                    <Video
+                    ref={videoRef}
+                    style={{ width: "100%", height: "100%" }}
+                    source={require("@/assets/videos/Innovasjon.mov")}
+                    useNativeControls={false}
+                    resizeMode={ResizeMode.CONTAIN}
+                    isLooping
+                    shouldPlay={false}
+                    posterSource={require("@/assets/images/PP.png")}
+                    posterStyle={styles.videoPoster}
+                    />
 
-                <View style={styles.overlay}>
-                    <Text style={styles.overlayText}>{isPlaying ? "⏸︎" : "▶︎"}</Text>
+                    <View style={styles.overlay}>
+                        <Text style={styles.overlayText}>{isPlaying ? "⏸︎" : "▶︎"}</Text>
+                    </View>
+                </Pressable>
+
+                <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
+                    <Text style={styles.title}>Planet Points</Text>
+                    <Text style={styles.lead}>Trykk på videoen for å spille/pause.</Text>
+                    <Text style={styles.body}>
+                        I denne gruppeeksamenen utviklet vi et fiktivt produkt fra idéfase til ferdig prototype,{"\n"} 
+                        med mål om å skape en innovativ løsning med reell brukerverdi. Prototypen fikk navnet "Planet Points",{"\n"}  
+                        en app med bærekraft i fokus som belønner brukere for miljøvennlige valg i hverdagen.{"\n\n"}  
+                        Prosessen besto av flere deler: idéutvikling, konseptbeskrivelse, business case, utvikling av prototype{"\n"}  
+                        og brukertesting med reelle brukere. Vi jobbet systematisk med innovasjonsmetoder fra pensum,{"\n"}  
+                        og testet tidlig for å samle innsikt og forbedre løsningen basert på tilbakemeldinger.{"\n"} 
+                        Prosjektet ga meg erfaring med hele innovasjonsløpet, fra research og konseptutvikling til prototyping,{"\n"}  
+                        brukertesting og iterasjon. Jeg fikk særlig styrket ferdighetene mine innen interaksjonsdesign,{"\n"}  
+                        tverrfaglig samarbeid og å formidle en løsning gjennom både skriftlig oppgave og presentasjon.{"\n\n"} 
+                        Vedlagt ligger et skjermopptak av den endelige prototypen vi lagde i dette prosjektet.</Text>
                 </View>
-            </Pressable>
-
-            <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
-                <Text style={styles.title}>Prosjektvideo</Text>
-                <Text style={styles.lead}>Trykk på videoen for å spille/pause.</Text>
-                <Text style={styles.body}>Beskrivelse av prosjekt</Text>
             </View>
         </View>
         </ScrollView>
@@ -74,6 +86,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#f6f4ef",
+      },
+      planetContainer: {
+        backgroundColor: "#FBE5C8",
+        height: 500,
       },
       content: {
         paddingBottom: 48,
@@ -97,10 +113,12 @@ const styles = StyleSheet.create({
       video: {
         width: "100%",
         height: "100%",
+        ...(Platform.OS === "web" ? { objectFit: "contain", objectPosition: "center" } : {}),
       },
       videoPoster: {
         width: "100%",
         height: "100%",
+        ...(Platform.OS === "web" ? { objectFit: "contain", objectPosition: "center" } : {}),
       },
       overlay: {
         position: "absolute",
@@ -121,8 +139,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 12,
       },
       title: {
-        fontSize: 22,
-        fontWeight: "700",
+        fontSize: 35,
+        fontFamily: "Poppins_700Bold",
         marginBottom: 8,
         color: "#1a1a1a",
       },
