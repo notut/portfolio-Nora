@@ -33,7 +33,7 @@ export default function ProjectScreen() {
         <Header />
 
         {/* Arbeidskrav iOS */}       
-        <View style={styles.notesContainer}>
+        <View style={styles.boxes}>
             <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
                 <Pressable
                 onPress={onTogglePlay}
@@ -79,7 +79,7 @@ export default function ProjectScreen() {
         </View>
 
         {/* Planet Points prototype */}       
-        <View style={styles.planetContainer}>
+        <View style={styles.boxes}>
             <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
                 <Pressable
                 onPress={onTogglePlay}
@@ -126,7 +126,7 @@ export default function ProjectScreen() {
         </View>
 
         {/* Trump nettside */}       
-        <View style={styles.trumpContainer}>
+        <View style={styles.boxes}>
             <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
                 <Pressable
                 onPress={onTogglePlay}
@@ -174,7 +174,7 @@ export default function ProjectScreen() {
         </View>
 
          {/* Android eksamen */}       
-         <View style={styles.androidContainer}>
+         <View style={styles.boxes}>
             <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
                 <Pressable
                 onPress={onTogglePlay}
@@ -222,7 +222,7 @@ export default function ProjectScreen() {
         </View>
 
         {/* Interaksjonsdesign eksamen */}       
-        <View style={styles.traineContainer}>
+        <View style={styles.boxes}>
             <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
                 <Pressable
                 onPress={onTogglePlay}
@@ -271,7 +271,7 @@ export default function ProjectScreen() {
         </View>
 
         {/* Unity eksamen */}       
-        <View style={styles.unityContainer}>
+        <View style={styles.boxes}>
             <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
                 <Pressable
                 onPress={onTogglePlay}
@@ -286,7 +286,8 @@ export default function ProjectScreen() {
                     <Video
                     ref={videoRef}
                     style={{ width: "100%", height: "100%" }}
-                    source={require("@/assets/videos/Interaksjonsdesign-eksamen.mov")}
+                    //Må endre filbane senere, unity fil for stor
+                    source={require("@/assets/videos/Innovasjon.mov")}
                     useNativeControls={false}
                     resizeMode={ResizeMode.CONTAIN}
                     isLooping
@@ -328,35 +329,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#f6f4ef",
       },
-      notesContainer: {
-        backgroundColor: "#F5D5E4",
+      boxes: {
+        backgroundColor: "#F2EDE9",
         height: 500,
         marginBottom: 20,
-      },
-      planetContainer: {
-        backgroundColor: "#E1EDDA",
-        height: 500,
-        marginBottom: 20,
-      },
-      trumpContainer: {
-        backgroundColor: "#FBE5C8",
-        height: 500,
-        marginBottom: 20,
-      },
-      androidContainer: {
-        backgroundColor: "#E8ECF3",
-        height: 500,
-        marginBottom: 20,
-      },
-      traineContainer: {
-        backgroundColor: "#D8CEE6",
-        height: 500,
-        marginBottom: 20,
-      },
-      unityContainer: {
-        backgroundColor: "#FEE7E6",
-        height: 500,
-        marginBottom: 20,
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOpacity: 0.08,
+        shadowRadius: 12,
+        shadowOffset: { width: 0, height: 6 },
+        elevation: 3,
       },
       link: {
         color: "#1e90ff",
