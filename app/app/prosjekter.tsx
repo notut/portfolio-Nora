@@ -133,6 +133,24 @@ export default function ProjectScreen() {
         </View>
       </View>
 
+      {/* iOS Eksamen */}
+      <View style={styles.boxes}>
+        <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
+          <VideoCard
+            source={require("../assets/videos/iOS-Eksamen.mp4")}
+            width={dims.boxW}
+            height={dims.boxH}
+            onOpen={() => openLightbox(require("../assets/videos/iOS-Eksamen.mp4"))}
+          />
+          <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
+            <Text style={styles.title}>Beacon</Text>
+            <Text style={styles.lead}>Trykk på videoen for å åpne i popup og se hele formatet.</Text>
+            <Text style={styles.developed}>Utviklet i: Swift.</Text>
+            <Text style={styles.body}>…</Text>
+          </View>
+        </View>
+      </View>
+
       {/* iOS arbeidskrav */}
       <View style={styles.boxes}>
         <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
