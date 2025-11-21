@@ -22,6 +22,16 @@ læring og eksperimenter.📚🔧 Den er bygget for å være:
   💻 Teknologier og verktøy jeg bruker
     
   👤 Kontaktinformasjon og bakgrunn om meg
+  
+
+💻⚙️ Teknologi & kjøring av prosjektet
+
+Porteføljen er utviklet i JavaScript ved hjelp av React og Expo 📱.
+For å kjøre applikasjonen lokalt via terminalen:
+  🔽 Naviger inn i app-mappen: cd app
+  ▶️ Start deretter prosjektet med Expo: npx expo start
+  
+Per nå er porteføljen primært tilpasset web 🌐, men jeg jobber aktivt med å tilpasse den for iOS-simulator også 📲.
 
 
 🎯 Hensikt
