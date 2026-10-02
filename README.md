@@ -26,7 +26,7 @@ læring og eksperimenter.📚🔧 Den er bygget for å være:
 
 💻⚙️ Teknologi & kjøring av prosjektet
 
-Porteføljen er utviklet i JavaScript ved hjelp av React og Expo 📱.
+Porteføljen er utviklet i TypeScript ved hjelp av JavaScript, React og Expo 📱.
 For å kjøre applikasjonen lokalt via terminalen:
   🔽 Naviger inn i app-mappen: cd app
   ▶️ Start deretter prosjektet med Expo: npx expo start
