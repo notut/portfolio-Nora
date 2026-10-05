@@ -14,12 +14,13 @@ import { Video, ResizeMode } from "expo-av";
 
 // Alle videoene dine samlet her
 const SOURCES: Record<string, any> = {
-  oppgave2: require("../assets/videos/Oppgave2-video.mp4"),
-  iosEksamen: require("../assets/videos/iOS-Eksamen.mp4"),
+  tekstapp: require("../assets/videos/Tekstapp.mp4"),
+  eksamen: require("../assets/videos/eksamen.mp4"),
+  /*iosEksamen: require("../assets/videos/iOS-Eksamen.mp4"),
   iosArbeidskrav: require("../assets/videos/iOS-Arbeidskrav.mp4"),
   innovasjon: require("../assets/videos/Innovasjon.mp4"),
   webEksamen: require("../assets/videos/Eksamen-webutvikling.mp4"),
-  androidEksamen: require("../assets/videos/Android-eksamen.mp4"),
+  androidEksamen: require("../assets/videos/Android-eksamen.mp4"),*/
 };
 
 export default function VideoPlayerScreen() {

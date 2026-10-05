@@ -93,25 +93,12 @@ export default function ProjectScreen() {
             source={require("../assets/videos/Tekstapp.mp4")}
             width={dims.boxW}
             height={dims.boxH}
-            onOpen={() => openLightbox(require("../assets/videos/Tekstapp.mp4"))}
-          />
-          <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
-            <Text style={styles.title}>Tekstapp</Text>
-            <Text style={styles.lead}>Trykk på videoen for å åpne i popup og se hele formatet.</Text>
-            <Text style={styles.developed}>Utviklet i: TypeScript med rammeverk React.</Text>
-            <Text style={styles.body}>Dette er bachelor prosjektet mitt som jeg gjennomførte i en gruppe på fire stykker. Backend er satt opp i Firebase og Netlify. Komponenter fra digdir sitt designsystem er tatt i bruk.</Text>
-          </View>
-        </View>
-      </View>
-
-       {/* Tekstapp - bachelor prosjekt */}
-      <View style={styles.boxes}>
-        <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
-          <VideoCard
-            source={require("../assets/videos/Tekstapp.mp4")}
-            width={dims.boxW}
-            height={dims.boxH}
-            onOpen={() => openLightbox(require("../assets/videos/Tekstapp.mp4"))}
+            onOpen={() =>
+              router.push({
+                pathname: "/videoPlayer",
+                params: { id: "tekstapp" },
+              })
+            }
           />
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Tekstapp</Text>
@@ -138,9 +125,11 @@ export default function ProjectScreen() {
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
-              router.push({ pathname: "/videoPlayer", params: { id: "oppgave2" } })
+              router.push({
+                pathname: "/videoPlayer",
+                params: { id: "eksamen" },
+              })
             }
-            //onOpen={() => openLightbox(require("../assets/videos/eksamen.mp4"))}
           />
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>DugnadHub</Text>
