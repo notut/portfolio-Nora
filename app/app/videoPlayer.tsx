@@ -16,8 +16,8 @@ import { Video, ResizeMode } from "expo-av";
 const SOURCES: Record<string, any> = {
   tekstapp: require("../assets/videos/Tekstapp.mp4"),
   eksamen: require("../assets/videos/eksamen.mp4"),
-  /*iosEksamen: require("../assets/videos/iOS-Eksamen.mp4"),
-  iosArbeidskrav: require("../assets/videos/iOS-Arbeidskrav.mp4"),
+  iosEksamen: require("../assets/videos/iOS-Eksamen.mp4"),
+  /*iosArbeidskrav: require("../assets/videos/iOS-Arbeidskrav.mp4"),
   innovasjon: require("../assets/videos/Innovasjon.mp4"),
   webEksamen: require("../assets/videos/Eksamen-webutvikling.mp4"),
   androidEksamen: require("../assets/videos/Android-eksamen.mp4"),*/

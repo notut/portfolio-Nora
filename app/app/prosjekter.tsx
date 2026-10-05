@@ -177,7 +177,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* iOS Eksamen 
+      {/* iOS Eksamen */}
       <View style={styles.boxes}>
         <View
           style={[
@@ -228,7 +228,7 @@ export default function ProjectScreen() {
             </Text>
           </View>
         </View>
-      </View>*/}
+      </View>
 
       {/* iOS arbeidskrav 
       <View style={styles.boxes}>
