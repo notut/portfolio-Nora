@@ -27,6 +27,7 @@ læring og eksperimenter.📚🔧 Den er bygget for å være:
 💻⚙️ Teknologi & kjøring av prosjektet
 
 Porteføljen er utviklet i TypeScript ved hjelp av JavaScript, React og Expo 📱.
+
 For å kjøre applikasjonen lokalt via terminalen:
   💻 Åpne terminalen og kjør: git clone https://github.com/notut/portfolio-Nora.git
   📂 Naviger inn i prosjekt mappen: portfolio-Nora
