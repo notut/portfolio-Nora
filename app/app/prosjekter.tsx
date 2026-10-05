@@ -396,7 +396,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* Android 
+      {/* Android */}
       <View style={styles.boxes}>
         <View
           style={[
@@ -446,7 +446,7 @@ export default function ProjectScreen() {
             </Text>
           </View>
         </View>
-      </View>*/}
+      </View>
     </ScrollView>
   );
 }
