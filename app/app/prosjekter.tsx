@@ -78,9 +78,49 @@ export default function ProjectScreen() {
     return { boxW, boxH };
   }, [width, height]);
 
+  function openLightbox(arg0: any): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Header />
+
+       {/* Tekstapp - bachelor prosjekt */}
+      <View style={styles.boxes}>
+        <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
+          <VideoCard
+            source={require("../assets/videos/Tekstapp.mp4")}
+            width={dims.boxW}
+            height={dims.boxH}
+            onOpen={() => openLightbox(require("../assets/videos/Tekstapp.mp4"))}
+          />
+          <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
+            <Text style={styles.title}>Tekstapp</Text>
+            <Text style={styles.lead}>Trykk på videoen for å åpne i popup og se hele formatet.</Text>
+            <Text style={styles.developed}>Utviklet i: TypeScript med rammeverk React.</Text>
+            <Text style={styles.body}>Dette er bachelor prosjektet mitt som jeg gjennomførte i en gruppe på fire stykker. Backend er satt opp i Firebase og Netlify. Komponenter fra digdir sitt designsystem er tatt i bruk.</Text>
+          </View>
+        </View>
+      </View>
+
+       {/* Tekstapp - bachelor prosjekt */}
+      <View style={styles.boxes}>
+        <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
+          <VideoCard
+            source={require("../assets/videos/Tekstapp.mp4")}
+            width={dims.boxW}
+            height={dims.boxH}
+            onOpen={() => openLightbox(require("../assets/videos/Tekstapp.mp4"))}
+          />
+          <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
+            <Text style={styles.title}>Tekstapp</Text>
+            <Text style={styles.lead}>Trykk på videoen for å åpne i popup og se hele formatet.</Text>
+            <Text style={styles.developed}>Utviklet i: TypeScript med rammeverk React.</Text>
+            <Text style={styles.body}>Dette er bachelor prosjektet mitt som jeg gjennomførte i en gruppe på fire stykker. Backend er satt opp i Firebase og Netlify. Komponenter fra digdir sitt designsystem er tatt i bruk.</Text>
+          </View>
+        </View>
+      </View>
 
       {/* Kryssplattform eksamen */}
       <View style={styles.boxes}>
@@ -100,6 +140,7 @@ export default function ProjectScreen() {
             onOpen={() =>
               router.push({ pathname: "/videoPlayer", params: { id: "oppgave2" } })
             }
+            //onOpen={() => openLightbox(require("../assets/videos/eksamen.mp4"))}
           />
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>DugnadHub</Text>
@@ -135,7 +176,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* iOS Eksamen */}
+      {/* iOS Eksamen 
       <View style={styles.boxes}>
         <View
           style={[
@@ -186,9 +227,9 @@ export default function ProjectScreen() {
             </Text>
           </View>
         </View>
-      </View>
+      </View>*/}
 
-      {/* iOS arbeidskrav */}
+      {/* iOS arbeidskrav 
       <View style={styles.boxes}>
         <View
           style={[
@@ -243,7 +284,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* Planet Points */}
+      {/* Planet Points 
       <View style={styles.boxes}>
         <View
           style={[
@@ -298,7 +339,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* TrumpVerse */}
+      {/* TrumpVerse 
       <View style={styles.boxes}>
         <View
           style={[
@@ -350,7 +391,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* Android */}
+      {/* Android 
       <View style={styles.boxes}>
         <View
           style={[
@@ -400,7 +441,7 @@ export default function ProjectScreen() {
             </Text>
           </View>
         </View>
-      </View>
+      </View>*/}
     </ScrollView>
   );
 }
