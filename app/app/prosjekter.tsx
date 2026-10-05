@@ -179,6 +179,7 @@ export default function ProjectScreen() {
 
       {/* iOS Eksamen */}
       <View style={styles.boxes}>
+        {/* Stil på video kort */}
         <View
           style={[
             styles.row,
@@ -188,10 +189,12 @@ export default function ProjectScreen() {
             },
           ]}
         >
+          {/* Selve video kort */}
           <VideoCard
             source={require("../assets/videos/iOS-Eksamen.mp4")}
             width={dims.boxW}
             height={dims.boxH}
+            // Åpner fullvisning av video
             onOpen={() =>
               router.push({
                 pathname: "/videoPlayer",
@@ -199,6 +202,7 @@ export default function ProjectScreen() {
               })
             }
           />
+          {/* Tekst ved siden av video, posisjonering */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Beacon</Text>
             <Text style={styles.lead}>
@@ -230,7 +234,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* iOS arbeidskrav 
+      {/* iOS arbeidskrav */}
       <View style={styles.boxes}>
         <View
           style={[
@@ -242,7 +246,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/videos/iOS-Arbeidskrav.mp4")}
+            source={require("../assets/videos/Arbeidskrav-iOS.mp4")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
