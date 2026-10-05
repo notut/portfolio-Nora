@@ -28,21 +28,6 @@ export default function HomeScreen() {
                   , Bergen - Bachelor i Informasjonsteknologi, frontend- og mobilutvikling.{"\n"}
                 <Text style={{color:"#BE82A0", fontSize: 16}}>August 2023 - Juni 2026</Text>
               </Text>
-              
-
-            <Text style={styles.technologyTitle}>Teknologier og verktøy</Text>
-              <Text style={styles.designTitle}>Design</Text>
-                <Text style={styles.technology}> <Text style={{color:"gray"}}>
-                  Figma, Miro, Adobe XD, Illustrator, Photoshop, Premiere Pro, InDesign, After Effects.</Text>
-                </Text>
-              <Text style={styles.developerTitle}>Utvikling</Text>
-                <Text style={styles.technology}> <Text style={{color:"gray"}}>
-                  HTML, CSS, JavaScript, Java, React, React Native, Kotlin, C#, Swift.</Text>
-                </Text>
-              <Text style={styles.otherTitle}>Annen teknologi</Text>
-                <Text style={styles.technology}> <Text style={{color:"gray"}}>
-                  .NET, SQLite, ABB Edge Insight, GitHub.</Text>
-                </Text>
 
           <Text style={styles.workTitle}>Arbeidshistorikk</Text>
             <Text style={styles.work}>
@@ -137,15 +122,28 @@ export default function HomeScreen() {
             ))}
             </View>
             <Text style={styles.rightTitle}>Referanser</Text>
-            <Text style={styles.rightText}>Referanser fås ved forespørsel.{"\n\n"}</Text>
+            <Text style={styles.rightText}>Referanser fås ved forespørsel.</Text>
             <Text style={styles.rightTitle}>Språk</Text>
-            <Text style={styles.rightText}>Norsk og engelsk.{"\n\n"}</Text>
+            <Text style={styles.rightText}>Norsk og engelsk.</Text>
             <Text style={styles.rightTitle}>Sertifikater</Text>
-            <Text style={styles.rightText}>TOEFL iBT Test.{"\n\n"}</Text>
+            <Text style={styles.rightText}>TOEFL iBT Test.</Text>
+
             <Text style={styles.rightTitle}>LinkedIn</Text>
-            <Text style={styles.rightText}>https://www.linkedin.com/in/nora-tufte-thoresen-9b8a76294/{"\n\n"}</Text>
+              <Link
+                href="https://www.linkedin.com/in/nora-tufte-thoresen-9b8a76294/"
+                target="_blank"
+                style={styles.rightText}
+              >
+                https://www.linkedin.com/in/nora-tufte-thoresen-9b8a76294/
+              </Link>            
             <Text style={styles.rightTitle}>Bachelor prosjekt</Text>
-            <Text style={styles.rightText}>https://github.com/KajaJohanne/BAO304-Tekstapp{"\n\n"}</Text>
+              <Link
+                  href="https://github.com/KajaJohanne/BAO304-Tekstapp"
+                  target="_blank"
+                  style={styles.rightText}
+                >
+                https://github.com/KajaJohanne/BAO304-Tekstapp
+              </Link> 
           </View>
         </View>    
       </View>
@@ -206,11 +204,13 @@ const styles = StyleSheet.create({
       fontSize: 16,
       lineHeight: 22,
       color: "#333",
+      marginBottom: 10,
     },
     skillsWrap: {
       flexDirection: "row",
       flexWrap: "wrap",
       alignItems: "center",
+      marginBottom: 16,
     },
     chip: {
       paddingVertical: 6,
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     },
     
     educationTitle: {
-      fontSize: 44,
+      fontSize: 38,
       fontWeight: "700",
       fontFamily: "Poppins_700Bold",
       marginTop: 20,
@@ -240,49 +240,8 @@ const styles = StyleSheet.create({
       marginLeft: 5,
     },
     
-    technologyTitle: {
-      fontSize: 44,
-      fontWeight: "700",
-      fontFamily: "Poppins_700Bold",
-      marginTop: 20,
-    },
-    designTitle: {
-      fontSize: 20,
-      fontWeight: "700",
-      fontFamily: "Poppins_700Bold",
-      marginLeft: 5,
-      marginTop: 10,
-    },
-    technology: {
-      fontSize: 16,
-      fontFamily: "Lato_400Regular",
-      marginTop: 5,
-      marginLeft: 5,
-    },
-    developerTitle: {
-      fontSize: 20,
-      fontWeight: "700",
-      fontFamily: "Poppins_700Bold",
-      marginLeft: 5,
-      marginTop: 10,
-    },
-    classesTitle: {
-      fontSize: 20,
-      fontWeight: "700",
-      fontFamily: "Poppins_700Bold",
-      marginLeft: 5,
-      marginTop: 10,
-    },
-    otherTitle: {
-      fontSize: 20,
-      fontWeight: "700",
-      fontFamily: "Poppins_700Bold",
-      marginLeft: 5,
-      marginTop: 10,
-    },
-    
     workTitle: {
-      fontSize: 44,
+      fontSize: 38,
       fontWeight: "700",
       fontFamily: "Poppins_700Bold",
       marginTop: 20,
@@ -301,7 +260,7 @@ const styles = StyleSheet.create({
     },
 
     voluntaryTitle: {
-      fontSize: 44,
+      fontSize: 38,
       fontWeight: "700",
       fontFamily: "Poppins_700Bold",
       marginTop: 20,
