@@ -22,7 +22,7 @@ export default function HomeScreen() {
 
         <View style={styles.textBlock}>
           <Text style={styles.h1}>Nora Tufte Thoresen</Text>
-          <Text style={styles.lead}>Frontend- og mobilutvikling</Text>
+          <Text style={styles.lead}>Masterstudent og frontend utvikler</Text>
 
           <Link href="/kontakt" asChild>
             <TouchableOpacity style={styles.button}>

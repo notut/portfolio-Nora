@@ -18,16 +18,27 @@ export default function HomeScreen() {
               +47 40100141 | noratt66@gmail.com
             </Text>
 
-            <Text style={styles.educationTitle}>Utdanning</Text>
-              <Text style={styles.education}>
-                <Text style={{fontWeight: "600"}}>Syddansk Universitetet</Text>
-                  , Kolding - Master i IT, Web communication design.{"\n"}
-                <Text style={{color:"#BE82A0", fontSize: 16}}>August 2026 - {"\n\n"}</Text>
+          <Text style={styles.educationTitle}>Utdanning</Text>
+            <Text style={styles.education}>
+              <Text style={{fontWeight: "600"}}>Syddansk Universitetet</Text>
+                , Kolding - Master i IT, Web communication design.{"\n"}
+              <Text style={{color:"#BE82A0", fontSize: 16}}>August 2026 - </Text>
+            </Text>
+            <Text style={styles.description}>
+              Jeg studerer for tiden en master i IT, Web communication design ved SDU i Kolding.{"\n\n"}
+            </Text>
 
-                <Text style={{fontWeight: "600"}}>Høyskolen Kristiania</Text>
-                  , Bergen - Bachelor i Informasjonsteknologi, frontend- og mobilutvikling.{"\n"}
-                <Text style={{color:"#BE82A0", fontSize: 16}}>August 2023 - Juni 2026</Text>
-              </Text>
+            <Text style={styles.education}>
+              <Text style={{fontWeight: "600"}}>Høyskolen Kristiania</Text>
+                , Bergen - Bachelor i Informasjonsteknologi, frontend- og mobilutvikling.{"\n"}
+              <Text style={{color:"#BE82A0", fontSize: 16}}>August 2023 - Juni 2026</Text>
+            </Text>
+            <Text style={styles.description}>
+              Gjennom denne bacheloren gjennomførte jeg en bacheloroppgave i gruppe, hos Statens vegvesen. 
+              Under bacheloroppgaven har jeg vært med på å  utvikle en intern nettside for de ansatte hos 
+              Statens vegvesen. Dette prosjektet har gitt meg erfaring med brukerforståelse, design og
+              utvikling i team, fra start til slutt.
+            </Text>
 
           <Text style={styles.workTitle}>Arbeidshistorikk</Text>
             <Text style={styles.work}>
