@@ -6,6 +6,7 @@ import {
   Pressable,
   View,
   Text,
+  Image,
 } from "react-native";
 import { Video, ResizeMode } from "expo-av";
 import { useRef, useState, useMemo } from "react";
@@ -29,35 +30,27 @@ function getSafeAspectRatio(data: any) {
   return raw;
 }
 
-// --- Gjenbrukbart videokort (thumbnail + play-ikon)
+// Gjenbrukbart videokort
 function VideoCard({
-  source,
+  thumbnail,
   width,
   height,
   onOpen,
 }: {
-  source: any;
+  thumbnail: any;
   width: number;
   height: number;
   onOpen: () => void;
 }) {
-  const thumbRef = useRef<Video>(null);
-  const [ratio, setRatio] = useState(16 / 9);
-
   return (
-    <Pressable onPress={onOpen} style={[styles.videoCard, { width, height }]}>
-      <Video
-        ref={thumbRef}
-        source={source}
-        onLoad={(data) => {
-          const safe = getSafeAspectRatio(data as any);
-          if (safe) setRatio(safe);
-        }}
-        style={{ width: "100%", height: "100%", aspectRatio: ratio }}
-        useNativeControls={false}
-        resizeMode={ResizeMode.CONTAIN}
-        shouldPlay={false}
-        isLooping
+    <Pressable
+      onPress={onOpen}
+      style={[styles.videoCard, { width, height }]}
+    >
+      <Image
+        source={thumbnail}
+        style={{ width: "100%", height: "100%" }}
+        resizeMode="cover"
       />
 
       <View style={styles.overlay}>
@@ -90,7 +83,7 @@ export default function ProjectScreen() {
       <View style={styles.boxes}>
         <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
           <VideoCard
-            source={require("../assets/videos/Tekstapp.mp4")}
+            thumbnail={require("../assets/images/statensVegvesen.png")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
@@ -133,7 +126,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/thumbnails/dugnadhub.png")}
+            thumbnail={require("../assets/images/Dugnadhub.png")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
@@ -191,7 +184,7 @@ export default function ProjectScreen() {
         >
           {/* Selve video kort */}
           <VideoCard
-            source={require("../assets/videos/iOS-Eksamen.mp4")}
+            thumbnail={require("../assets/videos/iOS-Eksamen.mp4")}
             width={dims.boxW}
             height={dims.boxH}
             // Åpner fullvisning av video
@@ -246,7 +239,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/videos/Arbeidskrav-iOS.mp4")}
+            thumbnail={require("../assets/videos/Arbeidskrav-iOS.mp4")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
@@ -301,7 +294,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/videos/planetPoints.mp4")}
+            thumbnail={require("../assets/images/PP.png")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
@@ -356,7 +349,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/videos/Eksamen-webutvikling.mp4")}
+            thumbnail={require("../assets/videos/Eksamen-webutvikling.mp4")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
@@ -408,7 +401,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/videos/Android-eksamen.mp4")}
+            thumbnail={require("../assets/images/rickAndmorty.png")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
