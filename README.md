@@ -15,15 +15,21 @@ læring og eksperimenter.📚🔧 Den er bygget for å være:
   Visuell – Presentere prosjekter på en måte som gjør det enkelt å forstå konsept, funksjonalitet og resultat.
 
 
+
 🛠️ Innhold i porteføljen
 
-  🧰 En samling av ferdige og pågående prosjekter 💻 Teknologier og verktøy jeg bruker 👤 Kontaktinformasjon og bakgrunn om meg
+  🧰 En samling av ferdige og pågående prosjekter 
+  
+  💻 Teknologier og verktøy jeg bruker 
+  
+  👤 Kontaktinformasjon og bakgrunn om meg
 
   
 
 💻⚙️ Teknologi & kjøring av prosjektet
 
 Porteføljen er utviklet i TypeScript ved hjelp av JavaScript, React og Expo 📱.
+
 
 For å kjøre applikasjonen lokalt via terminalen:
 
