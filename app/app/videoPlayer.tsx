@@ -18,9 +18,9 @@ const SOURCES: Record<string, any> = {
   eksamen: require("../assets/videos/eksamen.mp4"),
   iosEksamen: require("../assets/videos/iOS-Eksamen.mp4"),
   iosArbeidskrav: require("../assets/videos/Arbeidskrav-iOS.mp4"),
-  /*innovasjon: require("../assets/videos/Innovasjon.mp4"),
+  innovasjon: require("../assets/videos/planetPoints.mp4"),
   webEksamen: require("../assets/videos/Eksamen-webutvikling.mp4"),
-  androidEksamen: require("../assets/videos/Android-eksamen.mp4"),*/
+  /*androidEksamen: require("../assets/videos/Android-eksamen.mp4"),*/
 };
 
 export default function VideoPlayerScreen() {

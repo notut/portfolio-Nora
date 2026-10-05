@@ -289,7 +289,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* Planet Points 
+      {/* Planet Points */}
       <View style={styles.boxes}>
         <View
           style={[
@@ -301,7 +301,7 @@ export default function ProjectScreen() {
           ]}
         >
           <VideoCard
-            source={require("../assets/videos/Innovasjon.mp4")}
+            source={require("../assets/videos/planetPoints.mp4")}
             width={dims.boxW}
             height={dims.boxH}
             onOpen={() =>
@@ -344,7 +344,7 @@ export default function ProjectScreen() {
         </View>
       </View>
 
-      {/* TrumpVerse 
+      {/* TrumpVerse */}
       <View style={styles.boxes}>
         <View
           style={[
@@ -373,7 +373,7 @@ export default function ProjectScreen() {
             </Text>
             <Text style={styles.developed}>Utviklet i: Java med React.</Text>
             <Text style={styles.body}>
-              I denne eksamensoppgaven utviklet jeg en fullstack-applikasjon kalt
+              I denne eksamensoppgaven hvor temaet måtte være Trump, utviklet jeg en fullstack-applikasjon kalt
               "TrumpVerse", en nettside{"\n"}
               med CRUD-funksjonalitet (Create, Read, Update, Delete) for
               produkter. Løsningen besto av en{"\n"}
