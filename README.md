@@ -30,10 +30,15 @@ Porteføljen er utviklet i TypeScript ved hjelp av JavaScript, React og Expo �
 
 For å kjøre applikasjonen lokalt via terminalen:
   💻 Åpne terminalen og kjør: git clone https://github.com/notut/portfolio-Nora.git
+  
   📂 Naviger inn i prosjekt mappen: portfolio-Nora
+  
   📂 Naviger deretter inn i app-mappen: cd app
+  
   ⚙️ Installer dependecies: npm install (Dette installerer pakkene prosjektet trenger, basert på "package.json")
+  
   🚀 Start deretter prosjektet med Expo: npx expo start
+  
   
 Per nå er porteføljen primært tilpasset web 🌐, men jeg jobber aktivt med å tilpasse den for iOS-simulator også 📲.
 
