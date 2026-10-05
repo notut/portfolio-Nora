@@ -42,12 +42,11 @@ export default function HomeScreen() {
         <View style={styles.textBlock}>
           <Text style={styles.title}>OM MEG</Text>
           <Text style={styles.description}>
-            Hei! Mitt navn er Nora Tufte Thoresen.{"\n"}
-            Jeg er tredjeårsstudent i informasjonsteknologi frontend- og mobilutvikling ved Høyskolen Kristiania,
-            og planlegger en master i interaksjonsdesign høsten 2026.{"\n"}
-            Jeg brenner for å skape brukervennlige digitale løsninger som kombinerer kreativitet og teknologi.
-            Med erfaring fra både design og utvikling trives jeg i tverrfaglige team, og motiveres av å gjøre
-            komplekse prosesser enkle og intuitive for brukeren.
+            Hei! Mitt navn er Nora Tufte Thoresen, jeg er 22 år og fullførte våren 2026 en bachelor i 
+            Informasjonsteknologi frontend- og mobilutvikling. Jeg holder for tiden på med en master i Web communication design.
+            Jeg har en stor interesse for å skape brukervennlige digitale løsninger som kombinerer kreativitet og teknologi.
+            Med erfaring fra både design og utvikling trives jeg i tverrfaglige team, og motiveres av å lage
+            løsninger enkle og intuitive for brukeren.
           </Text>
 
           <Link href="/cv" asChild>
