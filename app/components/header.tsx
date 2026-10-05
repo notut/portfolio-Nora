@@ -4,7 +4,11 @@ import { Link } from "expo-router";
 export default function Header() {
     return(
         <View style={styles.header}>
-            <Text style={styles.logo}>PORTEFØLJE</Text>
+            <Link href="/" asChild>
+                <TouchableOpacity>
+                    <Text style={styles.logo}>PORTEFØLJE</Text>
+                </TouchableOpacity>
+            </Link>            
             <View style={styles.links}>
                 <Link href="/" asChild>
                     <TouchableOpacity><Text style={styles.link}>Om meg</Text></TouchableOpacity>

@@ -102,9 +102,21 @@ export default function ProjectScreen() {
           />
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Tekstapp</Text>
-            <Text style={styles.lead}>Trykk på videoen for å åpne i popup og se hele formatet.</Text>
+            <Text style={styles.lead}>Trykk på videoen for å åpne den i fullskjerm og se hele formatet.</Text>
             <Text style={styles.developed}>Utviklet i: TypeScript med rammeverk React.</Text>
-            <Text style={styles.body}>Dette er bachelor prosjektet mitt som jeg gjennomførte i en gruppe på fire stykker. Backend er satt opp i Firebase og Netlify. Komponenter fra digdir sitt designsystem er tatt i bruk.</Text>
+            <Text style={styles.body}>
+              Jeg utviklet sammen med bachelorgruppen min et nytt administrasjonsgrensesnitt for Tekstapp, 
+              et internt verktøy hos Statens vegvesen for håndtering av tekster på bokmål, nynorsk og engelsk til vegvesen.no.{"\n"} 
+              Løsningen gjør det enklere å opprette, finne, redigere og organisere tekstnøkler, og er utviklet med React, TypeScript, Vite, Netlify og Firebase.{"\n\n"}
+              Gjennom prosjektet har jeg styrket ferdighetene mine innen frontendutvikling, komponentbasert design og utvikling av brukervennlige grensesnitt. 
+              Vi jobbet iterativt med Design Sprint, smidig utvikling og brukertesting, og gjennomførte syv brukertester med ansatte i Statens vegvesen. 
+              Tilbakemeldingene ble brukt aktivt til å videreutvikle og forbedre løsningen.
+              Bachelorprosjektet ga meg spesielt verdifull erfaring med å utvikle en løsning basert på reelle brukerbehov og krav fra en ekstern oppdragsgiver. 
+              Jeg fikk også større forståelse for hvordan struktur, søk, filtrering og tydelige arbeidsflyter kan gjøre komplekse administrative systemer enklere å bruke.
+              Prosjektet ga meg erfaring med hele utviklingsprosessen, fra innsiktsarbeid og design til implementasjon, testing og ferdig løsning.{"\n\n"} 
+              Vedlagt ligger et skjermopptak av den endelige løsningen vi utviklet.{"\n"}
+              Link til repository: https://github.com/KajaJohanne/BAO304-Tekstapp
+            </Text>
           </View>
         </View>
       </View>
