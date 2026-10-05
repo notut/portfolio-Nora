@@ -13,34 +13,22 @@ export default function HomeScreen() {
           <View style={styles.textContainer}>
             <Text style={styles.title}>Nora Tufte Thoresen</Text>
             <Text style={styles.intro}>
-              Granbakken 12{"\n"}
-              1386, Asker, Norge{"\n"}
+              Granbakken 12, 1386 Asker{"\n"}
               Født: 04.12.2003{"\n"}
-              +47 40100141{"\n"}
-              noratt66@gmail.com
+              +47 40100141 | noratt66@gmail.com
             </Text>
 
             <Text style={styles.educationTitle}>Utdanning</Text>
               <Text style={styles.education}>
-              <Text style={{fontWeight: "600"}}>Høyskolen Kristiania</Text>
-              , Bergen - Bachelor i Informasjonsteknologi, frontend- og mobilutvikling.{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>August 2023 -</Text>
+                <Text style={{fontWeight: "600"}}>Syddansk Universitetet</Text>
+                  , Kolding - Master i IT, Web communication design.{"\n"}
+                <Text style={{color:"#BE82A0", fontSize: 16}}>August 2026 - {"\n\n"}</Text>
+
+                <Text style={{fontWeight: "600"}}>Høyskolen Kristiania</Text>
+                  , Bergen - Bachelor i Informasjonsteknologi, frontend- og mobilutvikling.{"\n"}
+                <Text style={{color:"#BE82A0", fontSize: 16}}>August 2023 - Juni 2026</Text>
               </Text>
-              <Text style={styles.education}>
-              <Text style={{fontWeight: "600"}}>Sunnmøre folkehøyskole</Text>
-              , Ulsteinvik.{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>August 2022 - Mai 2023</Text>
-              </Text>
-              <Text style={styles.education}>
-              <Text style={{fontWeight: "600"}}>Sandvika vgs</Text>
-              , Bærum - Medie og kommunikasjons linje.{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>August 2019 - Juni 2022</Text>
-              </Text>
-              <Text style={styles.education}>
-              <Text style={{fontWeight: "600"}}>Risenga ungdomsskole</Text>
-              , Asker.{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>August 2016 - Juni 2019</Text>
-              </Text>
+              
 
             <Text style={styles.technologyTitle}>Teknologier og verktøy</Text>
               <Text style={styles.designTitle}>Design</Text>
@@ -51,10 +39,6 @@ export default function HomeScreen() {
                 <Text style={styles.technology}> <Text style={{color:"gray"}}>
                   HTML, CSS, JavaScript, Java, React, React Native, Kotlin, C#, Swift.</Text>
                 </Text>
-              <Text style={styles.classesTitle}>Relevante fag</Text>
-                <Text style={styles.technology}> <Text style={{color:"gray"}}>
-                  iOS programmering, Android programmering, Interaksjonsdesign, Webutvikling, Kryssplattform.</Text>
-                </Text>
               <Text style={styles.otherTitle}>Annen teknologi</Text>
                 <Text style={styles.technology}> <Text style={{color:"gray"}}>
                   .NET, SQLite, ABB Edge Insight, GitHub.</Text>
@@ -63,64 +47,21 @@ export default function HomeScreen() {
           <Text style={styles.workTitle}>Arbeidshistorikk</Text>
             <Text style={styles.work}>
               <Text style={{fontWeight: "600"}}>Veas,</Text> Slemmestad - Sommerhjelp{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>Juni 2025 - August 2025</Text>
+              <Text style={{color:"#BE82A0", fontSize: 16}}>Juni 2025 - August 2026</Text>
             </Text>
             <Text style={styles.description}>
               I denne jobben utviklet jeg dashboards i Grafana for ABB Edge Insight hos{"\n"}
               Veas, basert på sanntidsdata via OPC UA. Arbeidet omfattet paneler,{"\n"}
               visualiseringer og design i Figma. Denne erfaringen styrket mine{"\n"}
-              ferdigheter innen datavisualisering, systemforståelse og brukervennlig design.
+              ferdigheter innen datavisualisering, systemforståelse og brukervennlig design. 
+              Jeg jobbet her sommeren 2025 og sommeren 2026.
             </Text>
             <Text style={styles.work}>
-              <Text style={{fontWeight: "600"}}>BRGN Consept Store & Bistro,</Text> Bergen - Medarbeider, tilkallingshjelp{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>September 2023 - </Text>
+              <Text style={{fontWeight: "600"}}>Deltidsstillinger</Text> - Medarbeider, deltid{"\n"}
+              <Text style={{color:"#BE82A0", fontSize: 16}}>Juli 2018 - Juni 2026 </Text>
             </Text>
             <Text style={styles.description}>
-              Jeg jobber for tiden på BRGN Concept Store & Bistro som tilkallingshjelp.{"\n"}
-              Her jobber jeg som selger i butikk, og barista i cafe. Jeg har i denne jobben{"\n"}
-              utviklet en sterk serviceinnstilling, og gode problemløsningsevner.
-            </Text>
-            <Text style={styles.work}>
-              <Text style={{fontWeight: "600"}}>Mester Grønn,</Text> Sandvika - Butikkmedarbeider, deltid{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>November 2021 - April 2023</Text>
-            </Text>
-            <Text style={styles.description}>
-              Jeg jobbet på Mester Grønn på Sandvika Storsenter som butikkmedarbeider.{"\n"}
-              Her lærte jeg mye om kundeservice og fikk erfart mye forskjellige oppgaver
-              og situasjoner.
-            </Text>
-            <Text style={styles.work}>
-              <Text style={{fontWeight: "600"}}>Home & Cottage,</Text> Sandvika - Butikkmedarbeider, deltid{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>Juni 2023 - Juli 2023</Text>
-            </Text>
-            <Text style={styles.description}>
-              Jeg har tidligere jobbet på Home & Cottage som butikkmedarbeider.{"\n"}
-              Her jobbet jeg med kundeservice og andre butikkoppgaver.
-            </Text>
-            <Text style={styles.work}>
-              <Text style={{fontWeight: "600"}}>Spiterstulen Turisthytte,</Text> Lom - Medarbeider, fulltid{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>Juni 2023</Text>
-            </Text>
-            <Text style={styles.description}>
-              Jeg jobbet hos Spiterstulen turisthytte en liten periode i juni 2023, der bidro{"\n"}
-              jeg med varierte oppgaver som vaskehjelp, servitør og kjøkkenhjelp.
-            </Text>
-            <Text style={styles.work}>
-              <Text style={{fontWeight: "600"}}>Body Green,</Text> Asker - Lagermedarbeider, tilkallingshjelp{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>Juni 2021 - Januar 2023</Text>
-            </Text>
-            <Text style={styles.description}>
-              Jeg jobbet hos Body Green som lagermedarbeider fra Juni 2021 - Januar{"\n"}
-              2023. Der jobbet jeg som tilkallingshjelp, og jobbet med å pakke ned og
-              holde orden i varer.
-            </Text>
-            <Text style={styles.work}>
-              <Text style={{fontWeight: "600"}}>Eie Eiendomsmegling,</Text> Asker - Vaskehjelp{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>Juli 2018 - Juli 2022</Text>
-            </Text>
-            <Text style={styles.description}>
-              Jeg har tidligere jobbet hos Eie eiendomsmegling som vaskehjelp fra Juli 2018{"\n"} 
-              til Juli 2022. Der lærte jeg å holde orden, i tillegg til å jobbe selvstendig og effektivt.
+              Diverse deltidsjobber ved siden av skolen.{"\n"}
             </Text>
 
           <Text style={styles.voluntaryTitle}>Frivillig arbeid</Text>
@@ -135,14 +76,6 @@ export default function HomeScreen() {
               til inntekt for barnekreftforeningen. Her har jeg fått mye erfaring med
               koordinering og prosjektledelse.
             </Text>
-            <Text style={styles.voluntary}>
-              <Text style={{fontWeight: "600"}}>Gullhella Sykehjem, </Text> Asker kommune - Frivillig på sykehjem{"\n"}
-              <Text style={{color:"#BE82A0", fontSize: 16}}>Januar 2019 - Februar 2019</Text>
-            </Text>
-            <Text style={styles.description}>
-              Jeg jobbet på Gullhella sykehjem vinteren 2019, der jobbet jeg som{"\n"}
-              frivillig med å snakke, underholde og lese for beboerne.
-            </Text>
         </View>
 
         <View style={styles.rightColumn}>
@@ -151,19 +84,52 @@ export default function HomeScreen() {
           style={styles.image}
           />
           <View style={styles.rightTextContainer}>
-            <Text style={styles.rightTitle}>Egenskaper</Text>
+            <Text style={styles.rightTitle}>Teknologier og verktøy</Text>
             <View style={styles.skillsWrap}>
               {[
-                "Engasjert",
-                "Pålitelig",
-                "Lærevillig",
-                "Interesse for teknologi og design",
-                "Detaljorientert",
-                "Strukturert",
-                "Rask til å lære",
-                "Samarbeidsvillig",
-                "Positiv",
-                "Effektiv"
+                "Figma",
+                "Miro",
+                "Adobe XD",
+                "Illustrator",
+                "Photoshop",
+                "Premiere Pro",
+                "InDesign",
+                "After Effects"
+            ].map((item) => (
+              <View key={item} style={styles.chip}>
+                <Text style={styles.chipText}>{item}</Text>
+              </View>
+            ))}
+            </View> 
+
+            <View style={styles.skillsWrap}>
+              {[
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Java",
+                "React",
+                "React Native",
+                "Kotlin",
+                "C#",
+                "Swift",
+                "Python"
+            ].map((item) => (
+              <View key={item} style={styles.chip}>
+                <Text style={styles.chipText}>{item}</Text>
+              </View>
+            ))}
+            </View>
+
+            <View style={styles.skillsWrap}>
+              {[
+                ".NET",
+                "SQLite",
+                "Orange",
+                "ABB Edge Insight",
+                "Netlify",
+                "Git",
+                "GitHub"
             ].map((item) => (
               <View key={item} style={styles.chip}>
                 <Text style={styles.chipText}>{item}</Text>
@@ -173,9 +139,13 @@ export default function HomeScreen() {
             <Text style={styles.rightTitle}>Referanser</Text>
             <Text style={styles.rightText}>Referanser fås ved forespørsel.{"\n\n"}</Text>
             <Text style={styles.rightTitle}>Språk</Text>
-            <Text style={styles.rightText}>Norsk, engelsk og litt fransk.{"\n\n"}</Text>
+            <Text style={styles.rightText}>Norsk og engelsk.{"\n\n"}</Text>
             <Text style={styles.rightTitle}>Sertifikater</Text>
             <Text style={styles.rightText}>TOEFL iBT Test.{"\n\n"}</Text>
+            <Text style={styles.rightTitle}>LinkedIn</Text>
+            <Text style={styles.rightText}>https://www.linkedin.com/in/nora-tufte-thoresen-9b8a76294/{"\n\n"}</Text>
+            <Text style={styles.rightTitle}>Bachelor prosjekt</Text>
+            <Text style={styles.rightText}>https://github.com/KajaJohanne/BAO304-Tekstapp{"\n\n"}</Text>
           </View>
         </View>    
       </View>
@@ -201,7 +171,7 @@ const styles = StyleSheet.create({
       lineHeight: 60,
     },
     intro: {
-      fontSize: 20,
+      fontSize: 16,
       fontFamily: "Lato_400Regular",
       marginTop: 5,
       marginLeft: 5,
