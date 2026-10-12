@@ -2,13 +2,13 @@ import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, Dimensions
 import Header from "@/components/header";
 import { Link } from "expo-router";
 
-const { height, width } = Dimensions.get("window");
-
 export default function HomeScreen() {
   return (
+    // Gjør det mulig å scrolle gjennom alle prosjektene
     <ScrollView style={styles.container}>
         <Header />
 
+        {/* Kontaktinformasjon */}
         <View style={styles.mainRow}>
           <View style={styles.textContainer}>
             <Text style={styles.title}>Nora Tufte Thoresen</Text>
@@ -18,6 +18,7 @@ export default function HomeScreen() {
               +47 40100141 | noratt66@gmail.com
             </Text>
 
+          {/* Utdanning seksjon */}
           <Text style={styles.educationTitle}>Utdanning</Text>
             <Text style={styles.education}>
               <Text style={{fontWeight: "600"}}>Syddansk Universitetet</Text>
@@ -40,6 +41,7 @@ export default function HomeScreen() {
               utvikling i team, fra start til slutt.
             </Text>
 
+          {/* Arbeidshistorikk */}
           <Text style={styles.workTitle}>Arbeidshistorikk</Text>
             <Text style={styles.work}>
               <Text style={{fontWeight: "600"}}>Veas,</Text> Slemmestad - Sommerhjelp{"\n"}
@@ -60,6 +62,7 @@ export default function HomeScreen() {
               Diverse deltidsjobber ved siden av skolen.{"\n"}
             </Text>
 
+          {/* Frivillig arbeid */}
           <Text style={styles.voluntaryTitle}>Frivillig arbeid</Text>
             <Text style={styles.voluntary}>
               <Text style={{fontWeight: "600"}}>Nestleder, </Text> SMB løpet - Verv ved Høyskolen Kristiania{"\n"}
@@ -74,6 +77,7 @@ export default function HomeScreen() {
             </Text>
         </View>
 
+        {/* Høyre side */}
         <View style={styles.rightColumn}>
           <Image 
           source={require("../assets/images/Meg.png")}
@@ -162,6 +166,7 @@ export default function HomeScreen() {
   );
 }
 
+// Styling for siden
 const styles = StyleSheet.create({
     container: {
       flex: 1,

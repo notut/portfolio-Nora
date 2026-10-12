@@ -8,10 +8,11 @@ export default function HomeScreen() {
   const imgW = isWide ? width * 0.45 : Math.min(width - 48, 420); // bildebredden
 
   return (
+    // Gjør det mulig å scrolle gjennom alle prosjektene
     <ScrollView style={styles.container}>
       <Header />
 
-      {/* SEKSJON 1 – bilde venstre, tekst høyre */}
+      {/* Første seksjon – bilde venstre, tekst høyre */}
       <View style={[styles.section, isWide ? styles.row : styles.col]}>
         <View style={[styles.frame, { width: imgW }]}>
           <Image
@@ -32,7 +33,7 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      {/* SEKSJON 2 – tekst venstre, bilde høyre helt ut til kanten */}
+      {/* Andre seksjon – tekst venstre, bilde høyre helt ut til kanten */}
       <View
         style={[
           styles.section,
@@ -68,13 +69,12 @@ export default function HomeScreen() {
   );
 }
 
+// Styling på siden
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f6f4ef",
   },
-
-  /* Layout */
   section: {
     width: "100%",
     paddingHorizontal: 24,
@@ -82,10 +82,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 24,
   },
-  row: { flexDirection: "row" },
-  col: { flexDirection: "column" },
-
-  /* Ramme rundt bilder */
+  row: { 
+    flexDirection: "row" 
+  },
+  col: { 
+    flexDirection: "column" 
+  },
   frame: {
     aspectRatio: 3 / 4,
     borderRadius: 10,
@@ -107,8 +109,6 @@ const styles = StyleSheet.create({
     // @ts-ignore
     objectPosition: "center",
   },
-
-  /* Tekstblokk */
   textBlock: { 
     flex: 1, 
     maxWidth: 700, 
@@ -138,8 +138,6 @@ const styles = StyleSheet.create({
     lineHeight: 27, 
     color: "#333" 
   },
-
-  /* Knapp */
   button: {
     marginTop: 16,
     backgroundColor: "#BE82A0",
