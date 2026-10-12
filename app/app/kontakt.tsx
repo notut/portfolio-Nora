@@ -3,21 +3,30 @@ import Header from "@/components/header";
 import { Link } from "expo-router";
 
 export default function ContactScreen() {
+    // Henter bredden for responsivt design
     const { width } = useWindowDimensions();
+    // Bestemmer om innholdet skal vises ved siden av hverandre
     const isWide = width >= 900;
 
     return (
+        // Gjør det mulig å scrolle gjennom alle prosjektene
         <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <Header />
 
+        {/* Endrer layout på smalere skjermer */}
         <View style={[styles.card, !isWide && styles.cardNarrow]}>
+            {/* Venstre del av kortet med kontaktinformasjon */}
             <View style={[styles.left, !isWide && styles.leftNarrow]}>
+                {/* Navn og overskrift */}
                 <Text style={styles.kicker}>Nora Tufte Thoresen</Text>
                 <Text style={styles.title}>KONTAKT</Text>
                 
+                {/* Kort intro */}
                 <Text style={styles.intro}>For jobbstillinger, prosjekter eller bare en hyggelig prat - ta kontakt.</Text>
 
+                {/* Deler kontaktinformasjonen inn i kolonner */}
                 <View style={styles.grid}>
+                    {/* Navn og lokasjon */}
                     <View style={styles.col}>
                         <Text style={styles.label}>Navn</Text>
                         <Text style={styles.value}>Nora Tufte Thoresen</Text>
@@ -26,13 +35,17 @@ export default function ContactScreen() {
                         <Text style={styles.value}>Oslo, Norge</Text>
                     </View>
 
+                    {/* Klikkbar kontaktinformasjon */}
                     <View style={styles.col}>
+                        {/* Åpner mail */}
                         <Text style={styles.label}>E-post</Text>
                         <Link href="mailto:noratt66@gmail.com" style={styles.link} accessibilityRole="link">noratt66@gmail.com</Link>
 
+                        {/* Åpner telefonfunksjon */}
                         <Text style={[styles.label, { marginTop: 18 }]}>Telefon</Text>
                         <Link href="tel:+4740100141" style={styles.link} accessibilityRole="link">+47 401 00 141</Link>
 
+                        {/* Åpner linkedIn profilen */}
                         <Text style={[styles.label, { marginTop: 18 }]}>LinkedIn</Text>
                         <Link 
                         href="https://www.linkedin.com/in/nora-tufte-thoresen-9b8a76294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
@@ -42,17 +55,23 @@ export default function ContactScreen() {
                 </View>
             </View>
 
+            {/* Hæyre del av kortet med profilbilde */}
             <View style={[styles.right, !isWide && styles.rightNarrow]}>
-                <Image source={require("@/assets/images/Meg.png")} resizeMode="cover" style={styles.hero} />
+                {/* Viser profilbildet og fyller tilgjengelig plass */}
+                <Image 
+                  source={require("@/assets/images/Meg.png")} 
+                  resizeMode="cover" 
+                  style={styles.hero} 
+                />
             </View>
         </View>
-
-        </ScrollView>
+      </ScrollView>
     );
 }
-
+// Maksimal bredde på kontaktkortet
 const CARD_MAX_W = 2000;
 
+// Styling for siden
 const styles = StyleSheet.create({
     container: {
         flex: 1,

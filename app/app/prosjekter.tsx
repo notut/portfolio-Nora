@@ -4,10 +4,8 @@ import {
   StyleSheet,
   ScrollView,
   useWindowDimensions,
-  Pressable,
   View,
   Text,
-  Image,
 } from "react-native";
 import { useMemo } from "react";
 import { useRouter } from "expo-router";
