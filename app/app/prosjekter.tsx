@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import VideoCard from "@/components/videoCard";
 import {
   StyleSheet,
   ScrollView,
@@ -8,84 +9,43 @@ import {
   Text,
   Image,
 } from "react-native";
-import { Video, ResizeMode } from "expo-av";
-import { useRef, useState, useMemo } from "react";
+import { useMemo } from "react";
 import { useRouter } from "expo-router";
 
-// Hjelpefunksjon for å få trygg aspect ratio til thumbnail
-function getSafeAspectRatio(data: any) {
-  const ns = data?.naturalSize;
-  if (!ns?.width || !ns?.height) return null;
-
-  let raw = ns.width / ns.height;
-
-  const orient = ns.orientation; // "portrait" | "landscape" | undefined
-
-  if (orient === "portrait" && raw > 1) raw = 1 / raw;
-  if (orient === "landscape" && raw < 1) raw = 1 / raw;
-
-  if (raw > 2.0) raw = 1 / raw;
-  if (raw < 0.45) raw = 1 / raw;
-
-  return raw;
-}
-
-// Gjenbrukbart videokort
-function VideoCard({
-  thumbnail,
-  width,
-  height,
-  onOpen,
-}: {
-  thumbnail: any;
-  width: number;
-  height: number;
-  onOpen: () => void;
-}) {
-  return (
-    <Pressable
-      onPress={onOpen}
-      style={[styles.videoCard, { width, height }]}
-    >
-      <Image
-        source={thumbnail}
-        style={{ width: "100%", height: "100%" }}
-        resizeMode="cover"
-      />
-
-      <View style={styles.overlay}>
-        <Text style={styles.overlayText}>▶︎</Text>
-      </View>
-    </Pressable>
-  );
-}
-
 export default function ProjectScreen() {
+  // Henter bredden og høyden for responsivt design
   const { width, height } = useWindowDimensions();
+  // Viser video og tekst ved siden av hverandre på brede skjermer
   const isWide = width >= 900;
+  // Navigerer mellom sider
   const router = useRouter();
 
+  // Beregner størrelsen på videokortene ut fra skjermstørrelsen
   const dims = useMemo(() => {
+    // Maksimal bredde er 640
     const boxW = Math.min(width * 0.46, 640);
+    // Maksimal høyde er 520
     const boxH = Math.min(height * 0.56, 520);
+
     return { boxW, boxH };
   }, [width, height]);
 
-  function openLightbox(arg0: any): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
+    // Gjør det mulig å scrolle gjennom alle prosjektene
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Header />
 
-       {/* Tekstapp - bachelor prosjekt */}
+      {/* Tekstapp - bachelor prosjekt */}
       <View style={styles.boxes}>
-        <View style={[styles.row, { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 }]}>
+        {/* Plasserer video og tekst ved siden av hverandre på brede skjermer, under hverandre på smalere skjermer */}
+        <View style={[styles.row, 
+          { flexDirection: isWide ? "row" : "column", gap: isWide ? 24 : 16 },]}>
+          {/* Videokort med eget forsidebilde */}
           <VideoCard
             thumbnail={require("../assets/images/statensVegvesen.png")}
             width={dims.boxW}
             height={dims.boxH}
+            // Åpner riktig video når brukeren trykker på kortet
             onOpen={() =>
               router.push({
                 pathname: "/videoPlayer",
@@ -93,6 +53,8 @@ export default function ProjectScreen() {
               })
             }
           />
+
+          {/* Tekstområdet ved siden av videoen */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Tekstapp</Text>
             <Text style={styles.lead}>Trykk på videoen for å åpne den i fullskjerm og se hele formatet.</Text>
@@ -116,6 +78,7 @@ export default function ProjectScreen() {
 
       {/* Kryssplattform eksamen */}
       <View style={styles.boxes}>
+        {/* Tilpasser plasseringen av video og tekst til skjermbredden */}
         <View
           style={[
             styles.row,
@@ -125,6 +88,7 @@ export default function ProjectScreen() {
             },
           ]}
         >
+          {/* Videokort med forsidebilde og navigasjon til videospilleren */}
           <VideoCard
             thumbnail={require("../assets/images/Dugnadhub.png")}
             width={dims.boxW}
@@ -136,6 +100,7 @@ export default function ProjectScreen() {
               })
             }
           />
+          {/* Prosjektinformasjon */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>DugnadHub</Text>
             <Text style={styles.lead}>
@@ -172,7 +137,7 @@ export default function ProjectScreen() {
 
       {/* iOS Eksamen */}
       <View style={styles.boxes}>
-        {/* Stil på video kort */}
+        {/* Tilpasser plasseringen av video og tekst til skjermbredden */}
         <View
           style={[
             styles.row,
@@ -229,6 +194,7 @@ export default function ProjectScreen() {
 
       {/* iOS arbeidskrav */}
       <View style={styles.boxes}>
+        {/* Tilpasser plasseringen av video og tekst til skjermbredden */}
         <View
           style={[
             styles.row,
@@ -238,10 +204,12 @@ export default function ProjectScreen() {
             },
           ]}
         >
+          {/* Selve video kort */}
           <VideoCard
             thumbnail={require("../assets/videos/Arbeidskrav-iOS.mp4")}
             width={dims.boxW}
             height={dims.boxH}
+            // Åpner video
             onOpen={() =>
               router.push({
                 pathname: "/videoPlayer",
@@ -249,6 +217,7 @@ export default function ProjectScreen() {
               })
             }
           />
+          {/* Prosjektbeskrivelse */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>ToDo App</Text>
             <Text style={styles.lead}>
@@ -284,6 +253,7 @@ export default function ProjectScreen() {
 
       {/* Planet Points */}
       <View style={styles.boxes}>
+        {/* Tilpasser plasseringen av video og tekst til skjermbredden */}
         <View
           style={[
             styles.row,
@@ -293,10 +263,12 @@ export default function ProjectScreen() {
             },
           ]}
         >
+          {/* Selve video kort */}
           <VideoCard
             thumbnail={require("../assets/images/PP.png")}
             width={dims.boxW}
             height={dims.boxH}
+            // Åpner video
             onOpen={() =>
               router.push({
                 pathname: "/videoPlayer",
@@ -304,6 +276,7 @@ export default function ProjectScreen() {
               })
             }
           />
+          {/* Prosjektbeskrivelse */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Planet Points</Text>
             <Text style={styles.lead}>
@@ -339,6 +312,7 @@ export default function ProjectScreen() {
 
       {/* TrumpVerse */}
       <View style={styles.boxes}>
+        {/* Tilpasser plasseringen av video og tekst til skjermbredden */}
         <View
           style={[
             styles.row,
@@ -348,10 +322,12 @@ export default function ProjectScreen() {
             },
           ]}
         >
+          {/* Selve video kort */}
           <VideoCard
             thumbnail={require("../assets/videos/Eksamen-webutvikling.mp4")}
             width={dims.boxW}
             height={dims.boxH}
+            // Åpner video
             onOpen={() =>
               router.push({
                 pathname: "/videoPlayer",
@@ -359,6 +335,7 @@ export default function ProjectScreen() {
               })
             }
           />
+          {/* Prosjektbeskrivelse */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Trump Verse</Text>
             <Text style={styles.lead}>
@@ -391,6 +368,7 @@ export default function ProjectScreen() {
 
       {/* Android */}
       <View style={styles.boxes}>
+        {/* Tilpasser plasseringen av video og tekst til skjermbredden */}
         <View
           style={[
             styles.row,
@@ -400,10 +378,12 @@ export default function ProjectScreen() {
             },
           ]}
         >
+          {/* Videokort */}
           <VideoCard
             thumbnail={require("../assets/images/rickAndmorty.png")}
             width={dims.boxW}
             height={dims.boxH}
+            // Åpner videos
             onOpen={() =>
               router.push({
                 pathname: "/videoPlayer",
@@ -411,6 +391,7 @@ export default function ProjectScreen() {
               })
             }
           />
+          {/* Prosjektbeskrivelse */}
           <View style={[styles.textSide, { paddingRight: isWide ? 24 : 16 }]}>
             <Text style={styles.title}>Rick & Morty App</Text>
             <Text style={styles.lead}>
@@ -444,9 +425,16 @@ export default function ProjectScreen() {
   );
 }
 
+// Styling for prosjektsiden
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f6f4ef" },
-  content: { paddingBottom: 48 },
+  // Bakgrunn og størrelse på hele siden
+  container: { 
+    flex: 1, 
+    backgroundColor: "#f6f4ef" 
+  },
+  content: { 
+    paddingBottom: 48 
+  },
   boxes: {
     backgroundColor: "#F2EDE9",
     height: 500,
@@ -463,42 +451,33 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
-  videoCard: {
-    borderRadius: 16,
-    overflow: "hidden",
-    backgroundColor: "#eae6de",
-    elevation: 4,
-    shadowColor: "#000",
-    shadowOpacity: 0.12,
-    shadowRadius: 12,
-    shadowOffset: { width: 0, height: 8 },
-    position: "relative",
-    marginLeft: 16,
-    alignSelf: "flex-start",
+  textSide: { 
+    flex: 1, 
+    minWidth: 240, 
+    paddingHorizontal: 12 
   },
-  overlay: {
-    position: "absolute",
-    bottom: 12,
-    right: 12,
-    backgroundColor: "rgba(0,0,0,0.45)",
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 999,
-  },
-  overlayText: { color: "#fff", fontSize: 18 },
-  textSide: { flex: 1, minWidth: 240, paddingHorizontal: 12 },
   title: {
     fontSize: 35,
     fontFamily: "Poppins_700Bold",
     marginBottom: 8,
     color: "#1a1a1a",
   },
-  lead: { fontSize: 16, lineHeight: 22, marginBottom: 8, color: "#2a2a2a" },
+  lead: { 
+    fontSize: 16, 
+    lineHeight: 22, 
+    marginBottom: 8, 
+    color: "#2a2a2a" 
+  },
   developed: {
     fontSize: 16,
     lineHeight: 22,
     marginBottom: 8,
     color: "#2a2a2a",
   },
-  body: { fontSize: 15, lineHeight: 22, color: "#444", marginBottom: 16 },
+  body: { 
+    fontSize: 15, 
+    lineHeight: 22, 
+    color: "#444", 
+    marginBottom: 16 
+  },
 });
